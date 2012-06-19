@@ -1,0 +1,12 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <viewletManager
+     name="sidebar"
+     class="zope.viewlet.manager.ConditionalViewletManager"
+     provides=".interfaces.ISidebar"
+     permission="tackle.Overview"
+     />
+
+</configure>

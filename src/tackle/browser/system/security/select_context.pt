@@ -1,0 +1,10 @@
+<fieldset>
+  <legend>Select context</legend>
+  <ul>
+    <li tal:repeat="item view/values"
+		tal:attributes="class string:outline-${item/nesting}">
+      <a tal:attributes="href string:${context/@@absolute_url}/select_group?context=${item/url}&title=${item/title}"
+	 tal:content="item/title"/>
+    </li>
+  </ul>
+</fieldset>

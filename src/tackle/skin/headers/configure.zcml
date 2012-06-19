@@ -1,0 +1,11 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <viewletManager
+     name="headers"
+     provides=".interfaces.IHeaders"
+     permission="tackle.Overview"
+     />
+
+</configure>

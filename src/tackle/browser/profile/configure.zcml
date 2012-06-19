@@ -1,0 +1,18 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <pagelet
+     for="zope.security.interfaces.IPrincipal"
+     name="index.html"
+     class=".profile.Pagelet"
+     permission="tackle.ManageProfile"
+     />
+  <template
+     for=".profile.Pagelet"
+     template="profile.pt"
+     />
+
+  <include file="menu.zcml" />
+
+</configure>

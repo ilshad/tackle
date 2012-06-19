@@ -1,0 +1,23 @@
+<h1>First Example Config</h1>
+<table border="1">
+  <tr>
+    <td>param1</td>
+    <td tal:content="python: view.c1.param1" />
+  </tr>
+  <tr>
+    <td>param2</td>
+    <td tal:content="python: view.c1.param2" />
+  </tr>
+</table>
+
+<h1>Second Example Config</h1>
+<table border="1">
+  <tr>
+    <td>param1</td>
+    <td tal:content="python: view.c2.param1" />
+  </tr>
+  <tr>
+    <td>param2</td>
+    <td tal:content="python: view.c2.param2" />
+  </tr>
+</table>

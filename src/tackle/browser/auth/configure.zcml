@@ -1,0 +1,44 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <pagelet
+     name="loginForm.html"
+     for="*"
+     class=".loginform.Pagelet"
+     permission="zope.Public"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+  <template
+     for=".loginform.Pagelet"
+     template="loginform.pt"
+     />
+  <browser:viewlet
+     name="login"
+     title="Log in"
+     class="tackle.skin.personalbar.item.EmptyItem"
+     manager="tackle.skin.personalbar.interfaces.IPersonalbar"
+     permission="zope.Public"
+     weight="10"
+     view=".loginform.Pagelet"
+     />
+
+  <pagelet
+     name="login.html"
+     class=".login.Pagelet"
+     permission="zope.Public"
+     allowed_interface="zope.app.publisher.interfaces.http.ILogin"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+
+  <pagelet
+     name="logout.html"
+     for="*"
+     class=".logout.Pagelet"
+     permission="zope.Public"
+     allowed_interface="zope.app.publisher.interfaces.http.ILogout"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+
+</configure>

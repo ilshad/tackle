@@ -1,0 +1,8 @@
+<fieldset>
+  <legend>Define roles for
+    <em class="description" tal:content="view/get_principal_title" />
+    @
+    <em class="description" tal:content="view/get_context_name" />
+  </legend>
+  <div metal:use-macro="macro:form" />
+</fieldset>

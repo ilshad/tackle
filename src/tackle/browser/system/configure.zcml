@@ -1,0 +1,80 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="title"
+     class=".title.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+  
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="users"
+     class=".users.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+  <template
+     for=".users.Pagelet"
+     template="users.pt"
+     />
+
+  <pagelet
+     for="zope.app.authentication.principalfolder.IInternalPrincipal"
+     name="edit"
+     class=".editprincipal.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="groups"
+     class=".groups.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+  <template
+     for=".groups.Pagelet"
+     template="groups.pt"
+     />
+
+  <pagelet
+     for="zope.app.authentication.groupfolder.IGroupInformation"
+     name="edit"
+     class=".editgroup.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="cookie_session"
+     class=".cookiesession.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+  
+  <pagelet
+     for="zope.app.authentication.groupfolder.GroupFolder"
+     name="delete"
+     class=".delgroup.Pagelet"
+     permission="zope.ManageSite"
+     layer="tackle.skin.interfaces.ILayer"
+     />
+  <template
+     for=".delgroup.Pagelet"
+     template="delgroup.pt"
+     />
+
+  <include file="menu.zcml" />
+  <include file="default.zcml" />
+
+  <include package=".content" />
+  <include package=".security" />
+  <include package=".perconfig" />
+
+</configure>

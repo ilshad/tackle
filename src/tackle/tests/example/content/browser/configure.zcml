@@ -1,0 +1,21 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="zope">
+
+  <pagelet
+     for="..interfaces.IExampleContent"
+     name="index.html"
+     class=".views.IndexPagelet"
+     permission="zope.View"
+     />
+
+  <pagelet
+     for="..interfaces.IExampleContent"
+     name="second.html"
+     class=".views.SecondPagelet"
+     permission="zope.ManageContent"
+     />
+
+  <include file="menu.zcml" />
+
+</configure>

@@ -1,0 +1,14 @@
+<tal:block condition="not: view/done">
+  <form method="post" tal:attributes="action request/URL">
+    <fieldset>
+      <legend>Identify your account</legend>
+      <label for="login">Enter your login</label>
+      <input type="text" name="login" id="login" />
+      <input type="submit" value="Send" />
+    </fieldset>
+  </form>
+</tal:block>
+
+<tal:block condition="view/done">
+  <h2>Password reset code was send to your email</h2>
+</tal:block>

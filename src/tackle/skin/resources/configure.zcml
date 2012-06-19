@@ -1,0 +1,29 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <resourceDirectory
+     name="tackle_images"
+     directory="images"
+     layer="..interfaces.ILayer"
+     />
+
+  <resourceDirectory
+     name="tackle_js"
+     directory="js"
+     layer="..interfaces.ILayer"
+     />
+
+  <zrt-resource
+     name="base.css"
+     file="css/base.css"
+     layer="..interfaces.ILayer"
+     />
+
+  <zrt-resource
+     name="tackle.css"
+     file="css/tackle.css"
+     layer="..interfaces.ILayer"
+     />
+
+</configure>

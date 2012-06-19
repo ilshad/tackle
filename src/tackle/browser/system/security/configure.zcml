@@ -1,0 +1,48 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <!-- first, select context -->
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="security"
+     class=".select_context.Pagelet"
+     permission="zope.Security"
+     />
+  <template
+     for=".select_context.Pagelet"
+     template="select_context.pt"
+     />
+
+  <!-- second, select principal group -->
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="select_group"
+     class=".select_group.Pagelet"
+     permission="zope.Security"
+     />
+  <template
+     for=".select_group.Pagelet"
+     template="select_group.pt"
+     />
+  <browser:page
+     for="tackle.interfaces.ISecuritySettings"
+     name="display"
+     class=".display.DisplayRolesForContext"
+     permission="zope.Security"
+     />
+
+  <!-- now setup security for those context and group -->
+  <pagelet
+     for="tackle.interfaces.ISecuritySettings"
+     name="edit"
+     class=".edit.Pagelet"
+     permission="zope.Security"
+     />
+  <template
+     for=".edit.Pagelet"
+     template="edit.pt"
+     />
+
+</configure>

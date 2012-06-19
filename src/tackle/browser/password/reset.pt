@@ -1,0 +1,30 @@
+<tal:block condition="not: view/done">
+  <form method="post" tal:attributes="action request/URL">
+    <fieldset>
+      <legend>Reset password</legend>
+      <table>
+	<tr>
+	  <td><label for="reset_code">Reset code</label></td>
+	  <td><input type="text" name="reset_code" tal:attributes="value python:request.get('code')" /></td>
+	</tr>
+	<tr>
+	  <td><label for="reset_login">Login</label></td>
+	  <td><input type="text" name="reset_login" tal:attributes="value python:request.get('login')" /></td>
+	</tr>
+	<tr>
+	  <td><label for="reset_password">New password</label></td>
+	  <td><input type="password" name="reset_password" /></td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td style="text-align:right"><input type="submit" name="submit" value="Reset password" /></td>
+	</tr>
+      </table>
+    </fieldset>
+  </form>
+</tal:block>
+
+<tal:block condition="view/done">
+  <h2>The password was reset</h2>
+</tal:block>
+

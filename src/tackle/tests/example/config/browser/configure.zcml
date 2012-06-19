@@ -1,0 +1,28 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="display_example_configs"
+     class=".display.Pagelet"
+     permission="zope.Public"
+     />
+  <template
+     for=".display.Pagelet"
+     template="display.pt"
+     />
+
+  <browser:viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="display_example_configs"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.Public"
+     url="display_example_configs"
+     title="Display Example Configs"
+     weight="10"
+     />
+
+</configure>

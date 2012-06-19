@@ -1,0 +1,24 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="zope">
+
+  <interface
+     interface=".interfaces.ISkin"
+     type="zope.publisher.interfaces.browser.IBrowserSkinType"
+     name="Example"
+     />
+
+  <z3c:layout 
+     layer=".interfaces.ILayer"
+     template="layout.pt"
+     />
+
+  <browser:zrt-resource
+     name="example.css"
+     file="example.css"
+     layer=".interfaces.ILayer"
+     />
+
+</configure>

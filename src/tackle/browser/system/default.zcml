@@ -1,0 +1,23 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <defaultView
+     for="zope.site.interfaces.ILocalSiteManager"
+     layer="tackle.skin.interfaces.ILayer"
+     name="title"
+     />
+
+  <defaultView
+     for="zope.app.authentication.principalfolder.IInternalPrincipal"
+     layer="tackle.skin.interfaces.ILayer"
+     name="edit"
+     />
+
+  <defaultView
+     for="zope.app.authentication.groupfolder.IGroupInformation"
+     layer="tackle.skin.interfaces.ILayer"
+     name="edit"
+     />
+
+</configure>

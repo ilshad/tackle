@@ -1,0 +1,40 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <pagelet
+     for="zope.security.interfaces.IPrincipal"
+     name="password.html"
+     class=".update.Pagelet"
+     permission="tackle.UpdatePassword"
+     />
+  <template
+     for=".update.Pagelet"
+     template="update.pt"
+     />
+
+  <pagelet
+     for="zope.component.interfaces.ISite"
+     name="password_reset_request"
+     class=".resetrequest.Pagelet"
+     permission="zope.Public"
+     />
+  <template
+     for=".resetrequest.Pagelet"
+     template="resetrequest.pt"
+     />
+
+  <pagelet
+     for="zope.component.interfaces.ISite"
+     name="password_reset"
+     class=".reset.Pagelet"
+     permission="zope.Public"
+     />
+  <template
+     for=".reset.Pagelet"
+     template="reset.pt"
+     />
+
+  <include file="menu.zcml" />
+
+</configure>

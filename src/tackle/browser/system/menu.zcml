@@ -1,0 +1,71 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="title"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageSite"
+     url="title"
+     title="Title"
+     weight="10"
+     />
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="content"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageContent"
+     url="content"
+     title="Content"
+     weight="20"
+     />
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="users"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageSite"
+     url="users"
+     title="Users"
+     weight="30"
+     />
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="groups"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageSite"
+     url="groups"
+     title="Groups"
+     weight="40"
+     />
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="security"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.Security"
+     url="security"
+     title="Security"
+     weight="50"
+     />
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="cookie_session"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageSite"
+     url="cookie_session"
+     title="Session Cookies"
+     weight="60"
+     />
+
+</configure>

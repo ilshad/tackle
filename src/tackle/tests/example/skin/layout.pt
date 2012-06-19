@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" tal:define="site modules/zope/component/hooks/getSite;">
+<head>
+  <title>Example Title</title>
+  <link rel="shortcut icon" type="image/png" tal:attributes="href string:${site/@@absolute_url}/@@/tackle_images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" tal:attributes="href string:${site/@@absolute_url}/@@/tackle.css" />
+  <link rel="stylesheet" type="text/css" tal:attributes="href string:${site/@@absolute_url}/@@/example.css" />
+  <script type="text/javascript" tal:attributes="src string:${site/@@absolute_url}/@@/tackle_js/jquery.js"></script>
+  <script type="text/javascript" tal:attributes="src string:${site/@@absolute_url}/@@/tackle_js/tackle.js"></script>
+  <!-- zc.resourcelibrary -->
+</head>
+<body>
+  <div id="wrapper">
+    <div id="personalbar" tal:content="structure provider:personalbar" />
+    <div id="header" tal:content="structure provider:header" />
+    <div id="appmenu" tal:content="structure provider:contents" />
+    <table id="middle">
+      <tr>
+	<tal:let define="render provider:sidebar">
+	  <tal:if condition="render"><td id="sidebar" tal:content="structure render" /></tal:if>
+	</tal:let>
+	<td id="main" tal:content="structure provider:pagelet" />
+      </tr>
+    </table>
+    <div id="footer">Copyright (c) 2011 <a href="http://example.com" target="_blank">EXAMPLE</a> 
+      <br />All Rights Reserved.</div>
+  </div>
+  <div id="spinner">&nbsp;</div>
+</body>
+</html>

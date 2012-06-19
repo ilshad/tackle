@@ -1,0 +1,18 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tackle">
+
+  <adapter
+     name="contents"
+     for="zope.interface.Interface
+	  ..interfaces.ILayer
+	  zope.publisher.interfaces.browser.IBrowserPublisher"
+     provides="zope.contentprovider.interfaces.IContentProvider"
+     factory=".menu.Menu"
+     />
+
+  <adapter
+     factory=".item.ContentMenuItem"
+     />
+
+</configure>

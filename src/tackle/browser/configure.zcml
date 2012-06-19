@@ -1,0 +1,34 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tackle">
+
+  <view
+     for="zope.component.interfaces.ISite"
+     type="zope.publisher.interfaces.browser.IBrowserRequest"
+     provides="zope.publisher.interfaces.browser.IBrowserPublisher"
+     factory=".traverser.SiteTraverser"
+     permission="zope.Public"
+     />
+
+  <adapter
+     name="security"
+     for="* zope.publisher.interfaces.IRequest"
+     provides="zope.traversing.interfaces.ITraversable"
+     factory=".namespace.security"
+     />
+
+  <adapter
+     name="user"
+     for="* zope.publisher.interfaces.IRequest"
+     provides="zope.traversing.interfaces.ITraversable"
+     factory=".namespace.user"
+     />
+
+  <include package=".welcome" />
+  <include package=".auth" />
+  <include package=".catalog" />
+  <include package=".system" />
+  <include package=".profile" />
+  <include package=".password" />
+
+</configure>

@@ -1,0 +1,26 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <viewlet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="persistent_config"
+     class=".menu.PersistentConfigMenu"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageSite"
+     weight="15"
+     />
+
+  <z3c:pagelet
+     for="zope.site.interfaces.ILocalSiteManager"
+     name="config"
+     class=".perconfig.Pagelet"
+     permission="zope.ManageSite"
+     />
+  <z3c:template
+     for=".perconfig.Pagelet"
+     template="perconfig.pt"
+     />
+
+</configure>

@@ -1,0 +1,35 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <interface
+     interface=".interfaces.ISkin"
+     type="zope.publisher.interfaces.browser.IBrowserSkinType"
+     name="Tackle"
+     />
+
+  <z3c:layout 
+     layer=".interfaces.ILayer"
+     template="layout.pt"
+     />
+
+  <browser:defaultSkin
+     name="Tackle"
+     />
+
+  <browser:defaultView
+     layer=".interfaces.ILayer"
+     name="index.html"
+     />
+
+  <include package=".contents" />
+  <include package=".header" />
+  <include package=".headers" />
+  <include package=".personalbar" />
+  <include package=".resources" />
+  <include package=".sidebar" />
+  <include package=".title" />
+
+</configure>

@@ -1,0 +1,18 @@
+<form id="form-add" name="form.add" enctype="multipart/form-data"
+      method="post" tal:attributes="action request/URL">
+  <fieldset>
+    <legend>Select group for <em class="description" tal:content="string:${request/title}" /></legend>
+    <table border="1">
+      <tr tal:repeat="item view/values">
+	<td>
+	  <a tal:attributes="href string:${item/url}/edit"
+	     tal:content="item/title" />
+	</td>
+	<td class="loadme shift-right"
+	    tal:content="string:${item/url}/display" />
+      </tr>
+    </table>
+  </fieldset>
+  <br />
+  <input type="submit" name="back" value="Back" />
+</form>

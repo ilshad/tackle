@@ -1,0 +1,73 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <viewletManager
+     name="personalbar"
+     class="zope.viewlet.manager.ConditionalViewletManager"
+     provides=".interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     />
+
+  <viewlet
+     name="username"
+     class=".item.UserName"
+     manager=".interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     weight="0"
+     />
+
+  <viewlet
+     name="home"
+     class=".item.Home"
+     manager=".interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     weight="5"
+     />
+
+  <viewlet
+     name="login"
+     title="Log in"
+     class=".item.Login"
+     manager=".interfaces.IPersonalbar"
+     permission="zope.Public"
+     weight="20"
+     />
+
+  <viewlet
+     name="logout"
+     title="Log out"
+     class=".item.Logout"
+     manager=".interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     weight="99"
+     />
+
+  <viewlet
+     name="profile"
+     title="Profile"
+     class=".item.Profile"
+     manager=".interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     weight="30"
+     />
+
+  <viewlet
+     name="system"
+     title="System"
+     class=".item.System"
+     manager=".interfaces.IPersonalbar"
+     permission="zope.ManageSite"
+     weight="30"
+     />
+
+  <viewlet
+     name="search"
+     title="Search"
+     class=".item.SimpleMenuItem"
+     manager=".interfaces.IPersonalbar"
+     permission="tackle.Overview"
+     weight="90"
+     />
+
+</configure>

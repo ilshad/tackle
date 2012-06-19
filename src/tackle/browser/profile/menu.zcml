@@ -1,0 +1,17 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <viewlet
+     for="zope.security.interfaces.IPrincipal"
+     name="profile.basic"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="tackle.ManageProfile"
+     url="index.html"
+     param="type=basic"
+     title="Basic User Profile"
+     weight="10"
+     />
+
+</configure>

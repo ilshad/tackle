@@ -1,0 +1,6 @@
+src/Tackle.egg-info
+*.pyc
+*.pyo
+
+maintain/build/*.txt
+example/example.egg-info/

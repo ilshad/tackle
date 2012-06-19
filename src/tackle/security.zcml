@@ -1,0 +1,63 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tackle">
+
+  <securityPolicy component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy" />
+
+  <!-- global principals -->
+  <unauthenticatedPrincipal id="zope.anybody" title="Unauthenticated User" />
+  <unauthenticatedGroup id="zope.Anybody" title="Unauthenticated Users" />
+  <authenticatedGroup id="zope.Authenticated" title="Authenticated Users" />
+  <everybodyGroup id="zope.Everybody" title="All Users" />
+
+  <!-- roles -->
+  <role id="tackle.ContentManager" title="Content manager" />
+  <role id="tackle.SystemManager" title="System manager" />
+  <role id="tackle.Owner" title="Content owner" />
+  <role id="tackle.Viewer" title="Viewer" />
+  <role id="tackle.Guest" title="Guest" />
+
+  <role id="zope.Anonymous" title="Everybody" />
+
+  <!-- permissions -->
+  <permission id="tackle.Overview" title="Overview" />
+  <permission id="tackle.ManageProfile" title="Manage User Profile" />
+  <permission id="tackle.UpdatePassword" title="Change Password" />
+
+  <!-- system manager -->
+  <grant role="tackle.SystemManager" permission="zope.ManageServices" />
+  <grant role="tackle.SystemManager" permission="zope.ManageSite" />
+  <grant role="tackle.SystemManager" permission="zope.ManageApplication" />
+  <grant role="tackle.SystemManager" permission="zope.ManageContent" />
+  <grant role="tackle.SystemManager" permission="zope.View" />
+  <grant role="tackle.SystemManager" permission="zope.dublincore.change" />
+  <grant role="tackle.SystemManager" permission="zope.dublincore.view" />
+  <grant role="tackle.SystemManager" permission="zope.Security" />
+  <grant role="tackle.SystemManager" permission="tackle.Overview" />
+
+  <!-- content manager -->
+  <grant role="tackle.ContentManager" permission="zope.ManageContent" />
+  <grant role="tackle.ContentManager" permission="zope.View" />
+  <grant role="tackle.ContentManager" permission="zope.dublincore.change" />
+  <grant role="tackle.ContentManager" permission="zope.dublincore.view" />
+  <grant role="tackle.ContentManager" permission="zope.Security" />
+  <grant role="tackle.ContentManager" permission="tackle.Overview" />
+
+  <!-- owner -->
+  <grant role="tackle.Owner" permission="tackle.ManageProfile" />
+  <grant role="tackle.Owner" permission="zope.ManageContent" />
+  <grant role="tackle.Owner" permission="zope.View" />
+  <grant role="tackle.Owner" permission="zope.dublincore.change" />
+  <grant role="tackle.Owner" permission="zope.dublincore.view" />
+  <grant role="tackle.Owner" permission="zope.Security" />
+
+  <!-- viewer -->
+  <grant role="tackle.Viewer" permission="zope.View" />
+  <grant role="tackle.Viewer" permission="zope.dublincore.view" />
+  <grant role="tackle.Viewer" permission="tackle.Overview" />
+
+  <!-- guest -->
+  <grant role="tackle.Guest" permission="tackle.Overview" />
+  <grant role="tackle.Guest" permission="zope.dublincore.view" />
+
+</configure>

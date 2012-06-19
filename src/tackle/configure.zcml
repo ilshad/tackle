@@ -1,0 +1,165 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tackle">
+
+  <include file="suite.zcml" />
+  <include file="security.zcml" />
+
+  <!--
+     Site
+     -->
+
+  <class class="zope.site.folder.Folder">
+    <require
+       permission="zope.Public"
+       interface="zope.container.interfaces.IReadContainer"
+       />
+  </class>
+
+  <subscriber
+     for="zope.site.interfaces.INewLocalSite"
+     handler=".setup.setup_local"
+     />
+
+  <!--
+     Security
+     -->
+
+  <class class=".security.SecuritySettings">
+    <require
+       interface=".interfaces.ISecuritySettings"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.ISecuritySettings"
+       permission="zope.Security"
+       />
+  </class>
+
+  <adapter
+     factory=".security.UserPrincipalRoleMap"
+     />
+
+  <adapter
+     factory=".security.UserPrincipalPermissionMap"
+     />
+
+  <utility
+     provides="zope.schema.interfaces.IVocabularyFactory"
+     component=".vocabulary.tackle_roles"
+     name="Tackle Roles"
+     />
+
+  <utility
+     provides="zope.schema.interfaces.IVocabularyFactory"
+     component=".vocabulary.groups_vocabulary"
+     name="Groups"
+     />
+
+  <adapter
+     factory=".member.GroupParticipationPrincipal"
+     />
+
+  <!--
+     User profile: basic profile
+     -->
+
+  <interface
+     interface=".interfaces.IBasicProfile"
+     type=".interfaces.IPrincipalProfileType"
+     name="basic"
+     />
+
+  <adapter
+     factory=".profile.BasicProfile"
+     />
+
+  <class class="zope.pluggableauth.factories.Principal">
+    <allow interface="zope.security.interfaces.IPrincipal" />
+  </class>
+
+  <!--
+     Content
+    -->
+
+  <class class=".content.InstalledContent">
+    <require
+       interface=".interfaces.IInstalledContent"
+       permission="zope.Public"
+       />
+    <require
+       set_schema=".interfaces.IInstalledContent"
+       permission="zope.ManageContent"
+       />
+  </class>
+
+  <utility
+     provides="zope.schema.interfaces.IVocabularyFactory"
+     component=".vocabulary.installed_content"
+     name="Installed Content"
+     />
+
+  <utility
+     provides="zope.schema.interfaces.IVocabularyFactory"
+     component=".vocabulary.content_factories"
+     name="Content Factories"
+     />
+
+  <adapter
+     factory=".content.annotation_factory"
+     trusted="true"
+     />
+
+  <subscriber
+     for=".interfaces.IContent
+	  zope.lifecycleevent.interfaces.IObjectRemovedEvent"
+     handler=".content.content_removed"
+     />
+
+  <!--
+     Persistent config protocol
+     -->
+
+  <adapter
+     factory=".perconfig.annotation_factory"
+     trusted="true"
+     />
+
+  <!--
+     Custom persistent configs
+     -->
+
+  <interface
+     interface=".interfaces.IContentTraverseDefault"
+     type=".interfaces.IPersistentConfigType"
+     name="Frontpage"
+     />
+
+  <!--
+     Mail subscription
+     -->
+
+  <adapter
+     factory=".subscription.annotation_factory"
+     trusted="True"
+     />
+
+  <subscriber
+     for=".interfaces.ISubscribable
+	  .interfaces.ISubscriptionEvent"
+     handler=".subscription.subscribe"
+     />
+
+  <!--
+     Password reset
+     -->
+
+  <subscriber
+     for=".interfaces.IPasswordResetRequest"
+     handler=".pwdreset.password_reset_request"
+     />
+
+  <include package=".browser" />
+  <include package=".skin" />
+
+</configure>

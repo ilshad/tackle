@@ -1,0 +1,23 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="tackle">
+
+  <adapter
+     name="title"
+     for="zope.component.interfaces.ISite
+	  ..interfaces.ILayer
+	  z3c.pagelet.interfaces.IPagelet"
+     provides="zope.contentprovider.interfaces.IContentProvider"
+     factory=".title.BaseTitle"
+     />
+
+  <adapter
+     name="title"
+     for="zope.interface.Interface
+	  ..interfaces.ILayer
+	  z3c.pagelet.interfaces.IPagelet"
+     provides="zope.contentprovider.interfaces.IContentProvider"
+     factory=".title.ContentTitle"
+     />
+
+</configure>

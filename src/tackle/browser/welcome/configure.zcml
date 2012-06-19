@@ -1,0 +1,16 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <pagelet
+     for="zope.component.interfaces.ISite"
+     name="index.html"
+     class=".welcome.Pagelet"
+     permission="tackle.Overview"
+     />
+  <template
+     for=".welcome.Pagelet"
+     template="welcome.pt"
+     />
+
+</configure>

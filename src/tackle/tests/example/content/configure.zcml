@@ -1,0 +1,16 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="zope">
+
+  <class class=".content.ExampleContent">
+    <implements interface="zope.annotation.IAttributeAnnotatable" />
+    <allow interface=".interfaces.IExampleContent" />
+
+    <!-- make this Tackle Content -->
+    <factory id="example.content" title="Example" />
+    <implements interface="tackle.interfaces.IContent" />
+  </class>
+
+  <include package=".browser" />
+
+</configure>

@@ -1,0 +1,64 @@
+<form id="form-search" name="form.search" enctype="multipart/form-data"
+      method="post" tal:attributes="action request/URL">
+  <input type="text" name="search" />
+  <input type="submit" name="form.search.submit" value="Search" />
+</form>
+
+<form id="form-delete" name="form.delete" enctype="multipart/form-data"
+      method="post" tal:attributes="action request/URL">
+  <table>
+    <tr tal:repeat="item view/result">
+      <td>
+	<a tal:content="item/name" tal:attributes="href string:${item/intprin/@@absolute_url}/edit" />
+      </td>
+      <td tal:content="item/intprin/login" />
+      <td style="text-align:right">
+	<input type="checkbox" name="delete:list"
+	       tal:attributes="value item/intprin/__name__" />
+      </td>
+    </tr>
+    <tr>
+      <td class="distinct">
+	<span tal:content="view/start"/> - <span tal:content="view/end" />
+	from <span tal:content="view/total" />
+      </td>
+      <td>
+	<input type="submit" name="form.delete.more" value="More"
+	       tal:condition="view/more" />
+	<input type="submit" name="form.delete.reset" value="Reset"
+	       tal:condition="not:view/more" />
+      </td>
+      <td><input type="submit" name="form.delete.submit" value="Delete" /></td>
+  </table>
+  <input type="hidden" name="start"
+	 tal:attributes="value python:view.start + view.batch_size" />
+</form>
+
+<form id="form-add" name="form.add" enctype="multipart/form-data"
+      method="post" tal:attributes="action request/URL">
+  <fieldset class="distinct">
+    <legend>Add User</legend>
+    <table>
+      <tr>
+	<td><label for="user_name">Name</label></td>
+	<td><input type="text" name="user_name" /></td>
+      </tr>
+      <tr>
+	<td><label for="user_email">Email</label></td>
+	<td><input type="text" name="user_email" /></td>
+      </tr>
+      <tr>
+	<td><label for="user_login">Login</label></td>
+	<td><input type="text" name="user_login" /></td>
+      </tr>
+      <tr>
+	<td><label for="user_password">Password</label></td>
+	<td><input type="password" name="user_password" /></td>
+      </tr>
+      <tr>
+	<td></td>
+	<td><input type="submit" name="form.add.submit" value="Add" /></td>
+      </tr>
+    </table>
+  </fieldset>
+</form>

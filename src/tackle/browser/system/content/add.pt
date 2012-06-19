@@ -1,0 +1,4 @@
+<fieldset class="distinct">
+  <legend>Add Content</legend>
+  <div metal:use-macro="macro:subform" />
+</fieldset>

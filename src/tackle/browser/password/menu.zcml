@@ -1,0 +1,16 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="tackle">
+
+  <viewlet
+     for="zope.security.interfaces.IPrincipal"
+     name="password"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="tackle.UpdatePassword"
+     url="password.html"
+     title="Update Password"
+     weight="20"
+     />
+
+</configure>

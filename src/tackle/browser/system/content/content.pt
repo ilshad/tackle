@@ -1,0 +1,13 @@
+<form name="form" method="post"
+      enctype="multipart/form-data"
+      tal:attributes="action request/URL">
+
+  <div class="status" tal:content="view/status" />
+
+  <tal:block content="structure view/installed/render" />
+
+  <br />
+
+  <tal:block content="structure view/add/render" />
+
+</form>

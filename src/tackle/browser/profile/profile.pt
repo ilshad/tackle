@@ -1,0 +1,12 @@
+<fieldset>
+  <legend>Edit profile</legend>
+  <div metal:use-macro="macro:form">
+    <metal:block fill-slot="bottom">
+      <input
+	 type="hidden"
+	 name="type"
+	 tal:attributes="value python:request.get('type')"
+	 />
+    </metal:block>
+  </div>
+</fieldset>

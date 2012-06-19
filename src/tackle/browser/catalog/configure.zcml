@@ -1,0 +1,26 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="tackle">
+
+  <z3c:pagelet
+     for="zope.component.interfaces.ISite"
+     name="search"
+     class=".search.Pagelet"
+     permission="tackle.Overview"
+     />
+
+  <z3c:template
+     for=".search.Pagelet"
+     template="search.pt"
+     />
+
+  <adapter
+     for="zope.component.interfaces.ISite
+	  tackle.skin.interfaces.ISkin
+	  .search.Pagelet"
+     provides="z3c.table.interfaces.IColumn"
+     factory=".search.SearchResultLinkColumn"
+     />
+  
+</configure>

@@ -1,0 +1,27 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="zope">
+
+  <viewlet
+     for="..interfaces.IExampleContent"
+     name="first"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.View"
+     url="index.html"
+     title="First Menu Item"
+     weight="0"
+     />
+
+  <viewlet
+     for="..interfaces.IExampleContent"
+     name="second"
+     class="tackle.skin.sidebar.menu.SimpleMenuItem"
+     manager="tackle.skin.sidebar.interfaces.ISidebar"
+     permission="zope.ManageContent"
+     url="second.html"
+     title="Second Menu Item"
+     weight="1"
+     />
+
+</configure>

@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data"
+      name="form" tal:attributes="action request/URL">
+  <input type="text" name="form.widgets.searchtext" />
+  <input type="submit" name="form.buttons.add" value="Search" />
+</form>
+
+<div tal:content="structure view/renderTable" />

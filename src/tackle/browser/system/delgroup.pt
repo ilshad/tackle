@@ -1,0 +1,8 @@
+Remove group <em tal:content="python:context[request.get('id')].title" /> ?
+<form method="post" enctype="multipart/form-data" name="form"
+      tal:attributes="action request/URL">
+  <input type="submit" name="form.buttons.delete" value="Delete" />
+  <input type="submit" name="form.buttons.cancel" value="Cancel" />
+  <input type="hidden" name="id"
+	 tal:attributes="value python:request.get('id')" />
+</form>

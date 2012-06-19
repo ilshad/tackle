@@ -1,0 +1,41 @@
+<fieldset class="distinct"
+	  tal:repeat="group view/groups">
+  <legend tal:content="group/value/title" />
+  <em tal:content="group/value/description" />
+  <ul>
+    <li tal:repeat="principal group/principals"
+	tal:content="principal/title" />
+  </ul>
+  <a style="float:right"
+     tal:attributes="href string:${group/value/@@absolute_url}/edit">
+    Edit
+  </a>
+</fieldset>
+
+<form id="form-add" name="form.add" enctype="multipart/form-data"
+      method="post" tal:attributes="action request/URL">
+  <fieldset class="distinct">
+    <legend>Add Group</legend>
+    <div class="status"
+	 tal:condition="view/status"
+	 tal:content="view/status" />
+    <table>
+      <tr>
+	<td><label for="name">ID</label></td>
+	<td><input type="text" name="name" /></td>
+      </tr>
+      <tr>
+	<td><label for="title">Title</label></td>
+	<td><input type="text" name="title" /></td>
+      </tr>
+      <tr>
+	<td><label for="description">Description</label></td>
+	<td><textarea name="description"></textarea></td>
+      </tr>
+      <tr>
+	<td></td>
+	<td><input type="submit" name="form.add.submit" value="Add" /></td>
+      </tr>
+    </table>
+  </fieldset>
+</form>

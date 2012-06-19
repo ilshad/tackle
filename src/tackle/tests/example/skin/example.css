@@ -1,0 +1,19 @@
+/* zrt-replace: "../images/" tal"string:${context/@@/tackle_images}/" */
+/* zrt-replace: "base.css" tal"string:${context/@@/base.css}/" */
+
+#personalbar {
+    background-color: #2C394A;
+    color: yellow;
+}
+#personalbar a {
+    color: green;
+}
+#personalbar a:hover {
+    color: white;
+}
+#header h1 a {
+    color: orange;
+}
+#footer {
+    border-top: darkred 1px solid;
+}

@@ -1,0 +1,119 @@
+/**
+*
+* 2010 Ilshad Khabibullin, <astoon@spacta.com>
+*
+**/
+
+/* zrt-replace: "../images/" tal"string:${context/@@/tackle_images}/" */
+/* zrt-replace: "base.css" tal"string:${context/@@/base.css}/" */
+
+/* zrt-replace: "main-font-color" "#333333" */
+/* zrt-replace: "wmain-border-color" "#777777" */
+
+/* zrt-replace: "distinct-background-color" "#bfbfbf" */ /*"#C0B196" */
+/* zrt-replace: "distinct-foreground-color" "#3C3B37" */ /*"#633D2B" */
+
+/* zrt-replace: "link-color" "#37506e" */
+/* zrt-replace: "link-hover-color" "#0060FF" */ /*"#893167" */
+
+/* zrt-replace: "title-color" "#3C3B37" */
+
+/* zrt-replace: "x-color" "#597600" */
+
+@import "base.css";
+
+body{
+    color: main-font-color;
+    background: #fff;
+    padding-bottom: 50px;
+}
+table {
+    border-color: main-border-color;
+}
+th {
+    color: main-font-color;
+}
+a {
+    color: link-color;
+}
+a:hover {
+    color: link-hover-color;
+}
+h1 {
+    color: title-color;
+}
+h2 {
+    color: title-color;
+}
+fieldset {
+    border-color: distinct-foreground-color;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+legend {
+    color: distinct-foreground-color;
+    text-shadow: 1px 2px 2px #ddd;
+}
+fieldset.distinct {
+    background-color: distinct-background-color;
+    color:main-font-color;
+}
+/*fieldset.distinct:hover {
+    background-color: #D0D0D0;
+}*/
+option {
+    border-bottom-color: #d7d7d7;
+}
+input[type=text], input[type=password], textarea, select {
+    border-color: main-border-color;
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus, select {
+    border-color: distinct-foreground-color;
+}
+.status {
+    color: red;
+}
+.distinct {
+    color: distinct-foreground-color;
+}
+
+#header h1 a {
+    color: title-color;
+    text-shadow: 1px 2px 2px #ddd;
+    text-decoration: none;
+}
+#header h1 a:hover {
+    text-decoration: none;
+    color: link-hover-color;
+}
+#appmenu a {
+    border-left: 1px solid link-color;
+    border-top: 1px solid link-color;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+#appmenu a:hover {
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-right: 1px solid link-color;
+    border-bottom: 1px solid link-color;
+}
+#settings .queries .query {
+    background-color: distinct-background-color;
+    border-color: distinct-foreground-color;
+    color: distinct-background-color;
+}
+.queries .query h4 {
+    color: distinct-foreground-color;
+}
+pre {
+    border-color: main-border-color;
+    background-color: #ccc;
+    color: #000;
+}
+.description {
+    color: #555;
+}
+.highlighted {
+    background-color: #FFFCB9;
+}

@@ -1,0 +1,59 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="zope">
+
+  <!-- main package -->
+  <include package="tackle" />
+
+  <!--
+     Tacklets: uncomment on demand
+     and add you custom tacklets
+    -->
+
+  <include package="tacklets.project" />
+  <include package="tacklets.theming" />
+  <include package="tacklets.themes" />
+
+  <!--
+     ice.control package for development.
+     `~/sandbox/bin/pip install ice.control`
+    -->
+
+  <!--include package="ice.control.zcml" />
+  <include package="ice.control" />
+  <include package="ice.control.repl" />
+  <grant role="tackle.SystemManager" permission="ice.control.View" />
+  <grant role="tackle.SystemManager" permission="ice.control.REPL" /-->
+
+  <!--
+     Example components
+     for development quick start
+     -->
+
+  <!--include package="tackle.tests.example.content" /-->
+  <!--include package="tackle.tests.example.skin" /-->
+  <!--includeOverrides package="tackle.tests.example.skin" file="overrides.zcml" /-->
+  <!--include package="tackle.tests.example.config" /-->
+
+  <!--
+      SMTP
+      
+      Do not edit "name" attribute - this name is used as mailer by default.
+    -->
+  <configure xmlns="http://namespaces.zope.org/mail">
+    <smtpMailer
+       name="tackle"
+       hostname="smtp.gmail.com"
+       port="587"
+       username="example@gmail.com"
+       password="password"
+       />
+    <queuedDelivery
+       name="tackle"
+       permission="zope.SendMail"
+       queuePath="/tmp/tackle-mail-queue"
+       mailer="tackle"
+       />
+  </configure>
+
+</configure>
