@@ -83,8 +83,8 @@ Install Tackle: development mode
 Follow 1 and 2 steps from previous section (install system dependencies
 and create virtual environment). Then get repositories::
 
-  $ git clone git://github.com/astoon/tackle.git
-  $ git clone git://github.com/astoon/tacklets.git
+  $ git clone git://github.com/ilshad/tackle.git
+  $ git clone git://github.com/ilshad/tacklets.git
 
 Download and install all ZTK packages. For this, use requirements file
 from "Tackle" package:
